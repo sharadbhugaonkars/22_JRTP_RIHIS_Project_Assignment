@@ -1,0 +1,35 @@
+package com.example.demo.entity;
+
+import java.time.LocalDate;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.Data;
+
+@Data
+@Entity
+@Table
+
+public class Citizen {
+	
+	@Id
+	@GeneratedValue
+	private Integer userId;
+	
+	private String fullName;
+	
+	private LocalDate dob;
+	
+	private String mobNum;
+	
+	private String emailId;
+	
+	private String gen;
+	
+	private String ssn;
+	
+
+}

@@ -1,0 +1,14 @@
+package com.example.demo.serviceimpl;
+
+import com.example.demo.entity.PlanUser;
+import com.example.demo.service.ARService;
+
+public class ARServiceImpl implements ARService {
+
+	@Override
+	public String getState(PlanUser user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

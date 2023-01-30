@@ -1,0 +1,33 @@
+package com.example.demo.rest;
+
+
+	import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+import com.example.demo.entity.PlanUser;
+
+	@RestController
+	public class ARRestController {
+		
+		private static final Logger log = LoggerFactory.getLogger(ARRestController.class);
+
+		@Autowired
+		private RestTemplate rt;
+		
+		@PostMapping("/showState")
+		public String showState(@RequestBody PlanUser user) {
+			log.info("WE ARE AT AR_SERVICE...");
+			String ssn = user.getSsn();
+			String resp = rt.getForEntity("http://ssawebapi-env.eba-k88bsahp.ap-south-1.elasticbeanstalk.com/ssn/{ssn}", String.class).getBody();
+			
+			return "FROM AR_SERVICE.."+resp;
+		}
+	}
+
+

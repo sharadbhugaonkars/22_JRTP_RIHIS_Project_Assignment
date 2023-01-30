@@ -1,0 +1,10 @@
+package com.example.demo.service;
+
+import com.example.demo.entity.Citizen;
+
+public interface ARService {
+	
+	
+	public String getState(Citizen citizen);
+
+}
